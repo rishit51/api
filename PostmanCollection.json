@@ -1,0 +1,57 @@
+{
+    "info": {
+        "name": "School Management API",
+        "description": "API to manage schools with endpoints to add and list schools.",
+        "version": "1.0.0",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Add School",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Greenwood High\",\n    \"address\": \"123 Main St, Springfield\",\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/api/addSchool",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["api", "addSchool"]
+                }
+            }
+        },
+        {
+            "name": "List Schools",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/api/listSchools?latitude=40.73061&longitude=-73.935242",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["api", "listSchools"],
+                    "query": [
+                        {
+                            "key": "latitude",
+                            "value": "40.73061"
+                        },
+                        {
+                            "key": "longitude",
+                            "value": "-73.935242"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
